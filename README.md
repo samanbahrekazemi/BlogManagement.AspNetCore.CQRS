@@ -5,7 +5,7 @@ This is a sample ASP.NET Core 6 project that demonstrates how to use the CQRS (C
 <br/>
 
 # <div>Technologies</div>
-* ASP.NET Core 6
+* <a href="https://learn.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-6.0">ASP.NET Core 6</a>
 * <a href="https://martinfowler.com/bliki/CQRS.html" target="_blank">CQRS pattern</a>
 * <a href="https://fluentvalidation.net/">FluentValidation</a>
 * <a href="https://automapper.org" target="_blank">AutoMapper</a>
