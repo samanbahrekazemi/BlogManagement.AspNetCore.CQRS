@@ -6,9 +6,8 @@ This is a sample ASP.NET Core 6 project that demonstrates how to use the CQRS (C
 
 # <div>Technologies</div>
 * ASP.NET Core 6
-* CQRS pattern
-* MediatR
-* <a href="https://automapper.org">AutoMapper</a>
-* <a href="https://www.nuget.org/packages/MediatR">MediatR</a>
+* <a href="https://martinfowler.com/bliki/CQRS.html" target="_blank">CQRS pattern</a>
+* <a href="https://automapper.org" target="_blank">AutoMapper</a>
+* <a href="https://www.nuget.org/packages/MediatR" target="_blank">MediatR</a>
 
 <br/>
