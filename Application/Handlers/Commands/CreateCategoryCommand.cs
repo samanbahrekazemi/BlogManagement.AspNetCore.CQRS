@@ -22,14 +22,15 @@ namespace Application.Handlers.Commands
         private readonly ICategoryService _categoryService;
         private readonly CreateCategoryCommandValidator _validator;
 
-        public CreateCategoryCommandHandler(ICategoryService categoryService)
+        public CreateCategoryCommandHandler(ICategoryService categoryService, CreateCategoryCommandValidator validator)
         {
             _categoryService = categoryService;
+            _validator = validator;
         }
 
         public async Task<Result<CategoryDto>> Handle(CreateCategoryCommand request, CancellationToken cancellationToken)
         {
-            var validationResult = await _validator.ValidateAsync(request);
+            var validationResult = await _validator.ValidateAsync(request, cancellationToken);
             if (!validationResult.IsValid)
                 return Result<CategoryDto>.Failure(validationResult.Errors.FirstOrDefault()?.ErrorMessage ?? "");
 
