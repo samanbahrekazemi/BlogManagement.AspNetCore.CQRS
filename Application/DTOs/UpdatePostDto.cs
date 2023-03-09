@@ -5,6 +5,16 @@ namespace Application.DTOs
 {
     public class UpdatePostDto : IMapFrom<Post> , IMapFrom<PostDto>
     {
+
+        public UpdatePostDto()
+        {
+
+        }
+
+        public UpdatePostDto(int id)
+        {
+            Id = id;
+        }
         public int Id { get; set; }
         public string Title { get; set; } 
         public string? Content { get; set; }

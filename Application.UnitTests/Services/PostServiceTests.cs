@@ -1,4 +1,5 @@
-﻿using Application.DTOs;
+﻿using Application.Common.Exceptions;
+using Application.DTOs;
 using Application.Services;
 using AutoMapper;
 using Core.Models;
@@ -63,6 +64,9 @@ namespace Application.UnitTests.Services
             Assert.False(result.Succeeded);
             Assert.Equal(exceptionMessage, result.ErrorMessage);
         }
+
+
+       
 
     }
 
