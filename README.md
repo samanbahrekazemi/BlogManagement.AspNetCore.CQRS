@@ -18,11 +18,7 @@ This is a sample ASP.NET Core 6 project that demonstrates how to use the CQRS (C
   <p>To use this project, you'll need to have <a href="https://dotnet.microsoft.com/download/dotnet/6.0" target="_new">.NET 6 SDK</a> installed on your machine. Once you've installed .NET 6, you can clone this repository and run the project using the following command:</p>
 
 <pre>
-    <div class="bg-black mb-4 rounded-md">
-        <div class="flex items-center relative text-gray-200 bg-gray-800 px-4 py-2 text-xs font-sans">
-                <code class="!whitespace-pre hljs">dotnet run</code>
-        </div>
-    </div>
+  <code class="!whitespace-pre hljs">dotnet run</code>
 </pre>
   
 </div>
