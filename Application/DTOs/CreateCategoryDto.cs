@@ -6,11 +6,11 @@
         {
 
         }
-        public CreateCategoryDto(string name)
+        public CreateCategoryDto(string title)
         {
-            Name = name;
+            Title = title;
         }
-        public string Name { get; set; }
+        public string Title { get; set; }
         public string? Content { get; set; }
 
     }

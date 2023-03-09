@@ -5,6 +5,16 @@ namespace Core.Models
 {
     public class Post : EntityBase<int>, IAuditableEntity
     {
+        public Post()
+        {
+
+        }
+
+        public Post(int id)
+        {
+            Id = Id;
+        }
+
         public string Title { get; set; } 
         public string Content { get; set; }
         public DateTime CreatedAt { get; set; }

@@ -28,6 +28,9 @@ namespace Application.Services
         {
             try
             {
+                if (string.IsNullOrEmpty(dto.Title))
+                    throw new ArgumentNullException(nameof(dto.Title));
+
                 var post = _mapper.Map<Post>(dto);
                 var entry = await _repository.AddAsync(post);
                 return Result<PostDto>.Success(_mapper.Map<PostDto>(entry));
@@ -94,6 +97,6 @@ namespace Application.Services
             }
         }
 
-       
+
     }
 }

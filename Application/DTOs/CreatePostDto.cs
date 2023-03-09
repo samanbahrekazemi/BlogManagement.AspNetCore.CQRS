@@ -1,5 +1,4 @@
-﻿using Application.Common.Mapping;
-using Core.Models;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Application.DTOs
 {
@@ -10,7 +9,7 @@ namespace Application.DTOs
 
         }
         public string Title { get; set; }
-        public string Content { get; set; }
+        public string? Content { get; set; }
         public bool IsPublished { get; set; }
         public int CategoryId { get; set; }
     }

@@ -13,12 +13,12 @@ namespace Infrastructure.Seed
                 {
                     var categories = new List<Category>
                     {
-                        new Category { Name = "Technology" },
-                        new Category { Name = "Programming" },
-                        new Category { Name = "Learning" },
-                        new Category { Name = "Art" },
-                        new Category { Name = "Sports" },
-                        new Category { Name = "Football" }
+                        new Category { Title = "Technology" },
+                        new Category { Title = "Programming" },
+                        new Category { Title = "Learning" },
+                        new Category { Title = "Art" },
+                        new Category { Title = "Sports" },
+                        new Category { Title = "Football" }
                     };
 
                     await context.Categories.AddRangeAsync(categories);

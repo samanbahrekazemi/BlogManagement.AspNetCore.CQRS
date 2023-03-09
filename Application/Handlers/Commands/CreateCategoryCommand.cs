@@ -1,6 +1,7 @@
 ﻿using Application.Common.Interfaces;
 using Application.Common.Models;
 using Application.DTOs;
+using Application.Handlers.Validators;
 using MediatR;
 
 namespace Application.Handlers.Commands
@@ -9,9 +10,9 @@ namespace Application.Handlers.Commands
     {
         public CreateCategoryCommand(CreateCategoryDto categoryDto)
         {
-            CategoryDto = categoryDto;
+            Dto = categoryDto;
         }
-        public CreateCategoryDto CategoryDto { get; set; }
+        public CreateCategoryDto Dto { get; set; }
     }
 
 
@@ -19,6 +20,7 @@ namespace Application.Handlers.Commands
     public class CreateCategoryCommandHandler : IRequestHandler<CreateCategoryCommand, Result<CategoryDto>>
     {
         private readonly ICategoryService _categoryService;
+        private readonly CreateCategoryCommandValidator _validator;
 
         public CreateCategoryCommandHandler(ICategoryService categoryService)
         {
@@ -27,7 +29,11 @@ namespace Application.Handlers.Commands
 
         public async Task<Result<CategoryDto>> Handle(CreateCategoryCommand request, CancellationToken cancellationToken)
         {
-            return await _categoryService.CreateAsync(request.CategoryDto);
+            var validationResult = await _validator.ValidateAsync(request);
+            if (!validationResult.IsValid)
+                return Result<CategoryDto>.Failure(validationResult.Errors.FirstOrDefault()?.ErrorMessage ?? "");
+
+            return await _categoryService.CreateAsync(request.Dto);
         }
     }
 }

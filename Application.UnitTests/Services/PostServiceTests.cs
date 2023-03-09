@@ -1,5 +1,4 @@
-﻿using Application.Common.Exceptions;
-using Application.DTOs;
+﻿using Application.DTOs;
 using Application.Services;
 using AutoMapper;
 using Core.Models;
@@ -26,11 +25,12 @@ namespace Application.UnitTests.Services
         }
 
 
+
         [Fact]
         public async Task CreateAsync_WithValidDto_ShouldReturnSuccessResultWithPostDto()
         {
             // Arrange
-            var createDto = new CreatePostDto();
+            var createDto = new CreatePostDto() { Title = "ASP.NET Core", CategoryId = 1 };
             var post = new Post();
             var entry = new Post();
             var expectedDto = new PostDto();
@@ -53,20 +53,20 @@ namespace Application.UnitTests.Services
         {
             // Arrange
             var createDto = new CreatePostDto();
-            var exceptionMessage = "An error occurred!";
+            var post = new Post();
+            var entry = new Post();
+            var expectedDto = new PostDto();
 
-            _mapperMock.Setup(m => m.Map<Post>(createDto)).Throws(new Exception(exceptionMessage));
+            _mapperMock.Setup(m => m.Map<Post>(createDto)).Returns(post);
+            _repositoryMock.Setup(r => r.AddAsync(post)).ReturnsAsync(entry);
+            _mapperMock.Setup(m => m.Map<PostDto>(entry)).Returns(expectedDto);
 
             // Act
             var result = await _postService.CreateAsync(createDto);
 
             // Assert
             Assert.False(result.Succeeded);
-            Assert.Equal(exceptionMessage, result.ErrorMessage);
         }
-
-
-       
 
     }
 

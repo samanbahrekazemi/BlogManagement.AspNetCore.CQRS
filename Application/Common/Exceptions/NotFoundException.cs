@@ -5,6 +5,5 @@
         public NotFoundException(string entityName, object entityId) : base($"Entity '{entityName}' with ID '{entityId}' was not found.")
         {
         }
-
     }
 }
