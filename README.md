@@ -4,16 +4,11 @@ This is a sample ASP.NET Core 6 project that demonstrates how to use the CQRS (C
 
 <br/>
 
-# <div>Technologies Used</div>
+# <div>Technologies</div>
 * ASP.NET Core 6
 * CQRS pattern
 * MediatR
-* AutoMapper
-* FluentValidation
+* <a href="https://automapper.org">AutoMapper</a>
+* <a href="https://www.nuget.org/packages/MediatR">MediatR</a>
 
-<br/>
-
-<div>
-  <a href="https://www.nuget.org/packages/MediatR">MediatR</a>
-</div>
 <br/>
