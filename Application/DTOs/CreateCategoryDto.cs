@@ -1,6 +1,8 @@
-﻿namespace Application.DTOs
+﻿using Core.Interfaces;
+
+namespace Application.DTOs
 {
-    public class CreateCategoryDto
+    public class CreateCategoryDto : ITitle, IContent
     {
         public CreateCategoryDto()
         {

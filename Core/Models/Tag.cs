@@ -5,7 +5,7 @@ namespace Core.Models
 {
     public class Tag : EntityBase<int>, IAuditableEntity
     {
-        public string Name { get; set; }
+        public string Title { get; set; }
 
         public DateTime CreatedAt { get; set; }
         public DateTime? ModifiedAt { get; set; }

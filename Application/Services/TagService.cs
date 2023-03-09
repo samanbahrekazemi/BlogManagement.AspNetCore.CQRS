@@ -71,9 +71,9 @@ namespace Application.Services
                 var query = _repository.AsQuerable();
 
                 if (!string.IsNullOrEmpty(q))
-                    query = query.Where(x => x.Name.Contains(q));
+                    query = query.Where(x => x.Title.Contains(q));
 
-               var data = await query.OrderByDescending(x => x.CreatedAt).ThenBy(a => a.Name)
+               var data = await query.OrderByDescending(x => x.CreatedAt).ThenBy(a => a.Title)
                .ProjectTo<TagDto>(_mapper.ConfigurationProvider)
                .PaginatedListAsync(page, size);
 

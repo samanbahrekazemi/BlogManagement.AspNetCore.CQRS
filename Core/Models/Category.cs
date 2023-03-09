@@ -3,7 +3,7 @@ using Core.Interfaces;
 
 namespace Core.Models
 {
-    public class Category : EntityBase<int>, IAuditableEntity
+    public class Category : EntityBase<int>, IAuditableEntity , ITitle
     {
         public string Title { get; set; }
         public string? Content { get; set; }

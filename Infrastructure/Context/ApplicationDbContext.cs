@@ -29,7 +29,7 @@ namespace Infrastructure.Context
         {
 
             modelBuilder.Entity<Tag>()
-                .HasIndex(t => t.Name)
+                .HasIndex(t => t.Title)
                 .IsUnique();
 
             modelBuilder.Entity<Tag>()

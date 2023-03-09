@@ -3,7 +3,7 @@ using Core.Interfaces;
 
 namespace Core.Models
 {
-    public class Post : EntityBase<int>, IAuditableEntity
+    public class Post : EntityBase<int>, IAuditableEntity , ITitle, IContent , IPublish
     {
         public Post()
         {
@@ -12,11 +12,11 @@ namespace Core.Models
 
         public Post(int id)
         {
-            Id = Id;
+            Id = id;
         }
 
         public string Title { get; set; } 
-        public string Content { get; set; }
+        public string? Content { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime? ModifiedAt { get; set; }
 

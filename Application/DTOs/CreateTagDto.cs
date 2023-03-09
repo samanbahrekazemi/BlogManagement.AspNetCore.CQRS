@@ -1,10 +1,9 @@
-﻿using Application.Common.Mapping;
-using Core.Models;
+﻿using Core.Interfaces;
 
 namespace Application.DTOs
 {
-    public class CreateTagDto
+    public class CreateTagDto : ITitle
     {
-        public string Name { get; set; }
+        public string Title { get; set; }
     }
 }

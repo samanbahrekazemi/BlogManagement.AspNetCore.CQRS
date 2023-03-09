@@ -1,8 +1,8 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Core.Interfaces;
 
 namespace Application.DTOs
 {
-    public class CreatePostDto 
+    public class CreatePostDto : ITitle, IContent
     {
         public CreatePostDto()
         {
